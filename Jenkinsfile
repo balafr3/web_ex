@@ -21,14 +21,14 @@ pipeline {
     stages {
         stage('Clone sources'){
             steps {
-                git url: 'https://github.com/Anusha-DevOp/web_ex'
+                git url: 'https://github.com/balafr3/web_ex'
             }
         }
 
      	stage('SonarQube analysis') {
 	     steps {
 		//Prepare SonarQube scanner enviornment
-		withSonarQubeEnv('SonarQube7.7') {
+		withSonarQubeEnv('LocalSonarScanner') {
 		   bat 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.3.0.1492:sonar'
 		}
 	      }
