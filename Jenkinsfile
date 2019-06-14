@@ -1,6 +1,6 @@
 // Obtaining an Artifactory server instance defined in Jenkins:
 			
-def server = Artifactory.server 'Artifactory Version 4.15.0'
+def server = Artifactory.server 'artifactory1'
 
 		 //If artifactory is not defined in Jenkins, then create on:
 		// def server = Artifactory.newServer url: 'Artifactory url', username: 'username', password: 'password'
@@ -14,8 +14,8 @@ pipeline {
     agent any
 
 	tools {
-		jdk "Java-1.8"
-		maven "Maven-3.5.3"
+		jdk "Java-9"
+		maven "Maven-3.6.1"
 	}
 
     stages {
@@ -28,8 +28,8 @@ pipeline {
      	stage('SonarQube analysis') {
 	     steps {
 		//Prepare SonarQube scanner enviornment
-		withSonarQubeEnv('SonarQube6.3') {
-		   bat 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.3.0.603:sonar'
+		withSonarQubeEnv('SonarQube7.7') {
+		   bat 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.3.0.1492:sonar'
 		}
 	      }
 	}
@@ -49,7 +49,7 @@ pipeline {
 		
 	   steps {
 		script {
-			rtMaven.tool = 'Maven-3.5.3' //Maven tool name specified in Jenkins configuration
+			rtMaven.tool = 'Maven-3.6.1' //Maven tool name specified in Jenkins configuration
 		
 			rtMaven.deployer releaseRepo: 'libs-release-local', snapshotRepo: 'libs-snapshot-local', server: server //Defining where the build artifacts should be deployed to
 			
