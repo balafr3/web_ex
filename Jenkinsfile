@@ -25,14 +25,14 @@ pipeline {
             }
         }
 
-     	stage('SonarQube analysis') {
+ /*    	stage('SonarQube analysis') {
 	     steps {
 		//Prepare SonarQube scanner enviornment
 		withSonarQubeEnv('LocalSonar') {
 		   sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.6.0.1398:sonar'
 		}
 	      }
-	}
+	} */
 
 //	stage('Quality Gate') {
 //		steps {
