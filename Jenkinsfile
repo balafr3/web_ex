@@ -15,7 +15,7 @@ pipeline {
 
 	tools {
 		jdk "Java SE Development Kit 8u212"
-		maven "Maven 3.5.3"
+		maven "Maven 3.6.1"
 	}
 
     stages {
