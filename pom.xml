@@ -21,8 +21,8 @@
 
   <dependencies>
     <dependency>
-      <groupId>Junit</groupId>
-      <artifactId>junit</artifactId>
+      <groupId>junit</groupId>
+      <artifactId>Junit</artifactId>
       <version>4.4</version>
       <scope>test</scope>
     </dependency>
