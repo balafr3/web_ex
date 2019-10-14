@@ -23,7 +23,7 @@
     <dependency>
       <groupId>Junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.11</version>
+      <version>4.4</version>
       <scope>test</scope>
     </dependency>
 
