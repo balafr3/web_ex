@@ -86,5 +86,24 @@ pipeline {
 		}
 		}
 	}
+	    post {
+always {
+/*mattermostSend color: 'good', message: 'API-Tests have been executed'*/
+deleteDir() /* clean up our workspace */
+}
+success {
+mattermostSend color: 'good', message: 'Web_Ex succeded', channel: 'Jenkins'
+}
+unstable {
+mattermostSend color: 'warning', message: 'Web_Ex is unstable', channel: 'Jenkins'
+}
+failure {
+mattermostSend color: 'danger', message: 'Web_Ex has failed', channel: 'Jenkins', icon: 'https://talks.bitexpert.de/zendcon16-jenkins-for-php-projects/images/jenkins.png'
+}
+changed {
+mattermostSend color: 'warning', message: 'Web_Ex has changed', channel: 'Jenkins'
+}
+}
+
 }
 }
