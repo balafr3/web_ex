@@ -90,16 +90,16 @@ pipeline {
 }
 	post {
 success {
-mattermostSend color: 'good', message: 'Web_Ex succeded', channel: 'Jenkins'
+mattermostSend color: 'good', message: 'Web_Ex succeded', endpoint: 'http://10.10.12.48:8065/hooks/8xewsmxtziro3cc7kyih4c3tcw', channel: 'build-info'
 }
 unstable {
-mattermostSend color: 'warning', message: 'Web_Ex is unstable', channel: 'Jenkins'
+mattermostSend color: 'warning', message: 'Web_Ex is unstable', endpoint: 'http://10.10.12.48:8065/hooks/8xewsmxtziro3cc7kyih4c3tcw', channel: 'build-info'
 }
 failure {
-mattermostSend color: 'danger', message: 'Web_Ex has failed', channel: 'Jenkins', icon: 'https://talks.bitexpert.de/zendcon16-jenkins-for-php-projects/images/jenkins.png'
+mattermostSend color: 'danger', message: 'Web_Ex has failed', channel: 'build-info', endpoint: 'http://10.10.12.48:8065/hooks/8xewsmxtziro3cc7kyih4c3tcw', icon: 'https://talks.bitexpert.de/zendcon16-jenkins-for-php-projects/images/jenkins.png'
 }
 changed {
-mattermostSend color: 'warning', message: 'Web_Ex has changed', channel: 'Jenkins'
+mattermostSend color: 'warning', message: 'Web_Ex has changed', endpoint: 'http://10.10.12.48:8065/hooks/8xewsmxtziro3cc7kyih4c3tcw', channel: 'build-info'
 }
 }
 }
