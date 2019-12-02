@@ -86,7 +86,9 @@ pipeline {
 		}
 		}
 	}
-	    post {
+
+}
+	post {
 always {
 /*mattermostSend color: 'good', message: 'API-Tests have been executed'*/
 //deleteDir() /* clean up our workspace */
@@ -103,7 +105,5 @@ mattermostSend color: 'danger', message: 'Web_Ex has failed', channel: 'Jenkins'
 changed {
 mattermostSend color: 'warning', message: 'Web_Ex has changed', channel: 'Jenkins'
 }
-}
-
 }
 }
