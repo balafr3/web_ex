@@ -14,7 +14,7 @@ pipeline {
     agent any
 
 	tools {
-		jdk "JDK 8u102"
+		jdk "OpenJDK-11.0.2-x64"
 		maven "Maven instalacija v3.6.1"
 	}
 
