@@ -89,10 +89,6 @@ pipeline {
 
 }
 	post {
-always {
-/*mattermostSend color: 'good', message: 'API-Tests have been executed'*/
-//deleteDir() /* clean up our workspace */
-}
 success {
 mattermostSend color: 'good', message: 'Web_Ex succeded', channel: 'Jenkins'
 }
