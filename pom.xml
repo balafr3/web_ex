@@ -6,7 +6,7 @@
 
   <groupId>hr.fina.test</groupId>
   <artifactId>web123</artifactId>
-  <version>1.0.4</version>
+  <version>1.0.8</version>
   <packaging>jar</packaging>
 
   <name>web_ex Maven Webapp</name>
